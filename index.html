@@ -2,213 +2,245 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Daniel Sierra – Global Revenue Ops</title>
-  <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daniel Sierra – Revenue Operations Executive</title>
   <style>
-    body, html {
+    :root {
+      --bg-light: #f7f6f3;
+      --bg-white: #ffffff;
+      --text-dark: #111;
+      --text-light: #666;
+      --accent: #9e9ea7;
+      --font-serif: 'Georgia', serif;
+      --font-sans: 'Helvetica Neue', sans-serif;
+    }
+
+    * {
       margin: 0;
       padding: 0;
-      scroll-behavior: smooth;
-      font-family: 'Segoe UI', sans-serif;
+      box-sizing: border-box;
     }
 
-    nav {
-      position: absolute;
-      width: 100%;
-      top: 0;
-      padding: 1rem 2rem;
-      background: transparent;
-      z-index: 10;
+    body {
+      font-family: var(--font-sans);
+      color: var(--text-dark);
+      background: var(--bg-light);
+      line-height: 1.7;
     }
 
-    .hero {
-      background: url('https://source.unsplash.com/1600x900/?technology,global') center/cover no-repeat;
+    a {
+      color: var(--text-dark);
+      text-decoration: none;
+    }
+
+    header.hero {
+      background: url('https://source.unsplash.com/1600x900/?technology,workspace') center/cover no-repeat;
       height: 100vh;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      flex-direction: column;
       color: white;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.4);
       text-align: center;
       position: relative;
     }
 
-    .hero::after {
-      content: "";
+    nav {
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      padding: 1.5rem 2rem;
+      z-index: 10;
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
+    nav a {
+      margin-left: 2rem;
+      color: white;
+      font-weight: 500;
     }
 
     .hero h1 {
       font-size: 3rem;
-      margin-bottom: 0.2em;
+      font-family: var(--font-serif);
     }
 
     .hero h2 {
+      font-size: 1.5rem;
       font-weight: 300;
-      font-size: 1.3rem;
+      margin-top: 0.5rem;
     }
 
-    .section {
-      padding: 4rem 1rem;
+    section {
+      padding: 6rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     .about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
       align-items: center;
     }
 
     .about img {
       width: 100%;
-      border-radius: 12px;
+      max-width: 400px;
+      border-radius: 8px;
+      flex: 1;
     }
 
-    blockquote {
-      font-style: italic;
-      text-align: center;
-      margin: 4rem auto;
-      font-size: 1.3rem;
-      max-width: 700px;
+    .about-text {
+      flex: 2;
+    }
+
+    h2.section-title {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      margin-bottom: 2rem;
     }
 
     .portfolio {
-      background: #f8f8f8;
+      background: var(--bg-white);
     }
 
-    .portfolio-grid {
+    .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
+      margin-top: 2rem;
     }
 
-    .portfolio-grid article {
-      background: white;
+    .card {
+      background: var(--bg-light);
       padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
-    .portfolio-grid article:hover {
-      transform: translateY(-5px);
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .quote {
+      font-style: italic;
+      text-align: center;
+      color: var(--text-light);
+      margin: 4rem auto;
+      max-width: 600px;
     }
 
     .contact {
-      background: #004466;
+      background: var(--accent);
       color: white;
-      padding: 4rem 1rem;
+      padding: 5rem 2rem;
     }
 
-    .contact form input, .contact form button {
-      background: white;
-      color: black;
+    .contact form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .contact input, .contact textarea, .contact button {
+      padding: 0.8rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .contact input, .contact textarea {
+      width: 100%;
+    }
+
+    .contact button {
+      background: black;
+      color: white;
+      cursor: pointer;
     }
 
     footer {
       text-align: center;
       padding: 2rem;
-      background: #222;
-      color: #aaa;
-    }
-
-    footer a {
-      color: #aaa;
-      margin: 0 0.5rem;
+      background: var(--bg-light);
+      font-size: 0.9rem;
+      color: var(--text-light);
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav class="container-fluid">
-    <ul><li><strong>Daniel Sierra</strong></li></ul>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#focus">Focus</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#focus">Focus</a>
+    <a href="#contact">Contact</a>
   </nav>
 
-  <!-- Hero Section -->
   <header class="hero">
-    <div class="hero-content">
-      <h1>Daniel Sierra</h1>
-      <h2>Global Program Director – Revenue Operations</h2>
-    </div>
+    <h1>Daniel Sierra</h1>
+    <h2>Global Program Director – Revenue Operations</h2>
   </header>
 
-  <!-- About Section -->
-  <section id="about" class="section container">
+  <section id="about">
     <div class="about">
-      <img src="https://source.unsplash.com/800x600/?workspace,executive" alt="Daniel Sierra Workspace" />
-      <div>
-        <h2>About Me</h2>
+      <img src="https://source.unsplash.com/800x600/?executive,workspace" alt="Daniel Sierra Portrait" />
+      <div class="about-text">
+        <h2 class="section-title">About Me</h2>
         <p>
-          Dynamic global leader with 15+ years of experience at the intersection of sales strategy, digital transformation, and enterprise technology. Proven track record of leading global CRM programs, optimizing revenue operations, and driving large-scale innovation across 178+ countries.
+          I am a dynamic global leader with 15+ years of experience in sales strategy, digital transformation, and enterprise technology. I specialize in CRM transformation, revenue operations, and large-scale process innovation.
         </p>
         <p>
-          Currently leading a worldwide CRM transformation program at DHL Express, I work closely with global teams and C-suite stakeholders to ensure scalable adoption, strong governance, and measurable commercial impact.
+          Currently leading a global CRM initiative across 178+ countries at DHL Express, I focus on aligning platforms like Microsoft Dynamics 365 with commercial goals, while managing cross-functional teams and executive stakeholders.
         </p>
+        <!-- TODO: Add more personal tone or career goals here if you'd like -->
       </div>
     </div>
   </section>
 
-  <!-- Quote / Mission -->
-  <blockquote>
-    
-  </blockquote>
+  <!-- Optional Quote or Mission -->
+  <!-- <div class="quote">
+    "Insert a real quote or mission statement here if you’d like."
+  </div> -->
 
-  <!-- Focus Areas Section -->
-  <section id="focus" class="section portfolio container">
-    <h2>Core Focus Areas</h2>
-    <div class="portfolio-grid">
-      <article>
+  <section id="focus" class="portfolio">
+    <h2 class="section-title">What I Focus On</h2>
+    <div class="cards">
+      <div class="card">
         <h3>CRM Transformation</h3>
-        <p>Delivering Microsoft Dynamics 365-based ecosystems for 7,500+ users globally with measurable ROI and user adoption.</p>
-      </article>
-      <article>
+        <p>Leading Microsoft Dynamics 365 rollouts for 7,500+ users, delivering global adoption strategies and performance metrics.</p>
+      </div>
+      <div class="card">
         <h3>Revenue Operations</h3>
-        <p>Strategically improving sales enablement, pipeline accuracy, and onboarding across 2,000+ sales reps in Europe and the Americas.</p>
-      </article>
-      <article>
-        <h3>Global Change Leadership</h3>
-        <p>Driving adoption and alignment through change programs, training frameworks, and executive engagement in 178+ markets.</p>
-      </article>
+        <p>Optimizing pipeline management, field enablement, and sales analytics across Europe, APAC, and the Americas.</p>
+      </div>
+      <div class="card">
+        <h3>Executive Enablement</h3>
+        <p>Engaging with C-level leadership to align digital roadmaps with strategic business outcomes worldwide.</p>
+      </div>
     </div>
   </section>
 
-  <!-- Optional Portfolio or Testimonials Section -->
-  <section class="section container">
-    <h2>Key Projects or Case Studies</h2>
-    <p><!-- TODO: Add portfolio links, screenshots or executive highlights here --></p>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact container">
-    <h2>Let's Connect</h2>
-    <form action="https://formspree.io/f/mnqkgepl" method="POST" class="grid">
+  <section id="contact" class="contact">
+    <h2 class="section-title">Let's Connect</h2>
+    <form action="https://formspree.io/f/mnqkgepl" method="POST">
       <input type="text" name="name" placeholder="Your name" required />
       <input type="email" name="email" placeholder="Your email" required />
+      <textarea name="message" rows="5" placeholder="Your message"></textarea>
       <button type="submit">Send Message</button>
     </form>
   </section>
 
-  <!-- Footer -->
   <footer>
-    <small>
-      <a href="https://linkedin.com/in/d-sierra" target="_blank">LinkedIn</a> • 
-      <a href="#"><!-- TODO: Link to resume or CV PDF --></a>
-    </small>
+    <p>
+      <a href="https://linkedin.com/in/d-sierra" target="_blank">LinkedIn</a>
+      •
+      <a href="#">Resume</a> <!-- TODO: Link to your actual PDF resume -->
+    </p>
   </footer>
 
 </body>
