@@ -6,11 +6,11 @@
   <title>Daniel Sierra – Revenue Operations Executive</title>
   <style>
     :root {
-      --bg-light: #f7f6f3;
+      --bg-light: #f9f9f9;
       --bg-white: #ffffff;
       --text-dark: #111;
-      --text-light: #666;
-      --accent: #9e9ea7;
+      --text-muted: #555;
+      --accent: #333;
       --font-serif: 'Georgia', serif;
       --font-sans: 'Helvetica Neue', sans-serif;
     }
@@ -23,224 +23,234 @@
 
     body {
       font-family: var(--font-sans);
-      color: var(--text-dark);
       background: var(--bg-light);
-      line-height: 1.7;
-    }
-
-    a {
       color: var(--text-dark);
-      text-decoration: none;
+      line-height: 1.6;
     }
 
-    header.hero {
-      background: url('https://source.unsplash.com/1600x900/?technology,workspace') center/cover no-repeat;
+    header {
+      background: url('https://source.unsplash.com/1600x900/?technology,business') center/cover no-repeat;
+      color: white;
       height: 100vh;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       flex-direction: column;
-      color: white;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.4);
       text-align: center;
-      position: relative;
+      padding: 2rem;
     }
 
-    nav {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-      padding: 1.5rem 2rem;
-      z-index: 10;
-    }
-
-    nav a {
-      margin-left: 2rem;
-      color: white;
-      font-weight: 500;
-    }
-
-    .hero h1 {
+    header h1 {
       font-size: 3rem;
       font-family: var(--font-serif);
     }
 
-    .hero h2 {
-      font-size: 1.5rem;
+    header h2 {
+      font-size: 1.3rem;
       font-weight: 300;
-      margin-top: 0.5rem;
     }
 
     section {
-      padding: 6rem 2rem;
+      padding: 4rem 2rem;
       max-width: 900px;
       margin: 0 auto;
     }
 
-    .about {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .about img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 8px;
-      flex: 1;
-    }
-
-    .about-text {
-      flex: 2;
-    }
-
-    h2.section-title {
+    section h2 {
       font-family: var(--font-serif);
       font-size: 2rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
 
-    .portfolio {
-      background: var(--bg-white);
-    }
-
-    .cards {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: 1fr 1fr;
       gap: 2rem;
-      margin-top: 2rem;
     }
 
     .card {
-      background: var(--bg-light);
+      background: var(--bg-white);
       padding: 2rem;
-      border-radius: 6px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
 
-    .card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
+    .section-dark {
+      background: var(--bg-white);
     }
 
-    .quote {
-      font-style: italic;
-      text-align: center;
-      color: var(--text-light);
-      margin: 4rem auto;
-      max-width: 600px;
-    }
-
-    .contact {
+    .section-accent {
       background: var(--accent);
       color: white;
-      padding: 5rem 2rem;
     }
 
-    .contact form {
-      max-width: 500px;
-      margin: 0 auto;
-      display: grid;
-      gap: 1rem;
-    }
-
-    .contact input, .contact textarea, .contact button {
-      padding: 0.8rem;
-      border: none;
-      border-radius: 4px;
-      font-size: 1rem;
-    }
-
-    .contact input, .contact textarea {
-      width: 100%;
-    }
-
-    .contact button {
-      background: black;
+    .section-accent h2 {
       color: white;
-      cursor: pointer;
     }
 
     footer {
       text-align: center;
-      padding: 2rem;
-      background: var(--bg-light);
       font-size: 0.9rem;
-      color: var(--text-light);
+      color: var(--text-muted);
+      padding: 2rem;
+    }
+
+    .btn-group {
+      margin-top: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: black;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-right: 1rem;
+    }
+
+    form input, form textarea, form button {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    form button {
+      background: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    iframe {
+      width: 100%;
+      height: 315px;
+      border: none;
+      margin-top: 1rem;
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#focus">Focus</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <header class="hero">
+  <!-- HERO -->
+  <header>
     <h1>Daniel Sierra</h1>
     <h2>Global Program Director – Revenue Operations</h2>
   </header>
 
+  <!-- ABOUT -->
   <section id="about">
-    <div class="about">
-      <img src="https://source.unsplash.com/800x600/?executive,workspace" alt="Daniel Sierra Portrait" />
-      <div class="about-text">
-        <h2 class="section-title">About Me</h2>
-        <p>
-          I am a dynamic global leader with 15+ years of experience in sales strategy, digital transformation, and enterprise technology. I specialize in CRM transformation, revenue operations, and large-scale process innovation.
-        </p>
-        <p>
-          Currently leading a global CRM initiative across 178+ countries at DHL Express, I focus on aligning platforms like Microsoft Dynamics 365 with commercial goals, while managing cross-functional teams and executive stakeholders.
-        </p>
-        <!-- TODO: Add more personal tone or career goals here if you'd like -->
-      </div>
+    <h2>About Daniel</h2>
+    <p>
+      Dynamic global leader with 15+ years of experience at the intersection of sales strategy, digital transformation, and enterprise technology. Proven record of leading multi-year global CRM programs, optimizing revenue operations, and enabling measurable commercial impact across 178+ countries.
+    </p>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section-dark" id="experience">
+    <h2>Experience</h2>
+    <div class="card">
+      <h3>DHL Express – Global Program Director</h3>
+      <p>2023–2025 | Barcelona, Spain</p>
+      <p>Leading a CRM transformation across 7,500+ users, managing global teams, and aligning tech with commercial priorities.</p>
+    </div>
+    <div class="card">
+      <h3>DHL Express – Senior Manager, Revenue Ops</h3>
+      <p>2019–2023 | Bonn, Germany</p>
+      <p>Directed strategic sales ops transformation for 2,000+ reps in Europe. Led eSignature initiative during COVID.</p>
+    </div>
+    <div class="card">
+      <h3>DHL Express – Manager, Enablement & Programs</h3>
+      <p>2014–2019 | Miami, USA</p>
+      <p>Rolled out offer management solution across Americas, improved onboarding by 30%, launched BI dashboards.</p>
     </div>
   </section>
 
-  <!-- Optional Quote or Mission -->
-  <!-- <div class="quote">
-    "Insert a real quote or mission statement here if you’d like."
-  </div> -->
+  <!-- RESULTS -->
+  <section id="results">
+    <h2>Results</h2>
+    <ul>
+      <li>Led CRM transformation across 178 countries</li>
+      <li>Mentored 50+ global team members across regions</li>
+      <li>Drove eSignature project during COVID, adopted enterprise-wide</li>
+      <li>Improved sales onboarding time by 30%</li>
+      <li>Created executive dashboards for real-time performance insight</li>
+    </ul>
+  </section>
 
-  <section id="focus" class="portfolio">
-    <h2 class="section-title">What I Focus On</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>CRM Transformation</h3>
-        <p>Leading Microsoft Dynamics 365 rollouts for 7,500+ users, delivering global adoption strategies and performance metrics.</p>
-      </div>
-      <div class="card">
-        <h3>Revenue Operations</h3>
-        <p>Optimizing pipeline management, field enablement, and sales analytics across Europe, APAC, and the Americas.</p>
-      </div>
-      <div class="card">
-        <h3>Executive Enablement</h3>
-        <p>Engaging with C-level leadership to align digital roadmaps with strategic business outcomes worldwide.</p>
-      </div>
+  <!-- EXPERTISE -->
+  <section class="section-dark" id="expertise">
+    <h2>Expertise</h2>
+    <div class="grid">
+      <div class="card">CRM Strategy (Dynamics 365)</div>
+      <div class="card">Global Sales Operations</div>
+      <div class="card">Executive Engagement</div>
+      <div class="card">Change Management</div>
+      <div class="card">Training & Enablement</div>
+      <div class="card">BI & KPI Dashboards</div>
     </div>
   </section>
 
-  <section id="contact" class="contact">
-    <h2 class="section-title">Let's Connect</h2>
+  <!-- EDUCATION -->
+  <section id="education">
+    <h2>Education</h2>
+    <p>Executive MBA – EAE Business School & University of Barcelona-IL3 (in progress)</p>
+    <p>Business Admin – Universidad Latina de Costa Rica (2013)</p>
+    <p>Certifications: Lean Six Sigma Bronze, ITIL Foundation</p>
+  </section>
+
+  <!-- VIDEO PLACEHOLDER -->
+  <section class="section-accent" id="video">
+    <h2>Meet Daniel</h2>
+    <!-- TODO: Replace placeholder with a real video embed -->
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+  </section>
+
+  <!-- INTERESTS -->
+  <section id="interests">
+    <h2>Interests</h2>
+    <p><!-- TODO: Add a few personal interests (e.g., global cultures, tech, mentorship, etc.) --></p>
+  </section>
+
+  <!-- Q&A -->
+  <section class="section-dark" id="qa">
+    <h2>Q&A</h2>
+    <!-- TODO: Add Q&A blocks (e.g., “What drives you?”, “Biggest challenge?”) -->
+    <p><strong>Q:</strong> What drives you?</p>
+    <p><strong>A:</strong> <!-- TODO: Your answer here --></p>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <!-- TODO: Pull 1-3 quotes from LinkedIn or peers -->
+    <blockquote>“Daniel is a visionary leader who understands how to execute global initiatives with local precision.”</blockquote>
+  </section>
+
+  <!-- RESUME + BIO BUTTONS -->
+  <section class="btn-group" style="text-align: center;">
+    <a href="#" class="btn">Download Resume</a>
+    <a href="#" class="btn">Download Bio</a>
+    <!-- TODO: Link to real PDF files -->
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section-accent" id="contact">
+    <h2>Contact</h2>
     <form action="https://formspree.io/f/mnqkgepl" method="POST">
       <input type="text" name="name" placeholder="Your name" required />
       <input type="email" name="email" placeholder="Your email" required />
-      <textarea name="message" rows="5" placeholder="Your message"></textarea>
-      <button type="submit">Send Message</button>
+      <textarea name="message" placeholder="Your message" rows="5"></textarea>
+      <button type="submit">Send</button>
     </form>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    <p>
-      <a href="https://linkedin.com/in/d-sierra" target="_blank">LinkedIn</a>
-      •
-      <a href="#">Resume</a> <!-- TODO: Link to your actual PDF resume -->
-    </p>
+    <p>© Daniel Sierra — <a href="https://linkedin.com/in/d-sierra" target="_blank">LinkedIn</a></p>
   </footer>
 
 </body>
