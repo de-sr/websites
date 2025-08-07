@@ -6,109 +6,208 @@
   <title>Daniel Sierra – Global Revenue Ops</title>
   <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" rel="stylesheet" />
   <style>
-    body {
+    body, html {
       margin: 0;
       padding: 0;
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', sans-serif;
     }
+
+    nav {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      padding: 1rem 2rem;
+      background: transparent;
+      z-index: 10;
+    }
+
     .hero {
-      background: url('https://source.unsplash.com/1600x900/?business,technology') center/cover no-repeat;
+      background: url('https://source.unsplash.com/1600x900/?technology,global') center/cover no-repeat;
       height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
       color: white;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      position: relative;
     }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+
     .hero h1 {
       font-size: 3rem;
       margin-bottom: 0.2em;
     }
+
     .hero h2 {
-      font-weight: normal;
-      font-size: 1.5rem;
+      font-weight: 300;
+      font-size: 1.3rem;
     }
+
     .section {
       padding: 4rem 1rem;
     }
-    .about img {
-      max-width: 100%;
-      border-radius: 12px;
-    }
-    .grid-two {
+
+    .about {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
+      align-items: center;
     }
-    .portfolio .grid {
+
+    .about img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    blockquote {
+      font-style: italic;
+      text-align: center;
+      margin: 4rem auto;
+      font-size: 1.3rem;
+      max-width: 700px;
+    }
+
+    .portfolio {
+      background: #f8f8f8;
+    }
+
+    .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
     }
+
+    .portfolio-grid article {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .portfolio-grid article:hover {
+      transform: translateY(-5px);
+    }
+
+    .contact {
+      background: #004466;
+      color: white;
+      padding: 4rem 1rem;
+    }
+
+    .contact form input, .contact form button {
+      background: white;
+      color: black;
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
-      background: #f1f1f1;
+      background: #222;
+      color: #aaa;
+    }
+
+    footer a {
+      color: #aaa;
+      margin: 0 0.5rem;
     }
   </style>
 </head>
 <body>
 
+  <!-- Navigation -->
+  <nav class="container-fluid">
+    <ul><li><strong>Daniel Sierra</strong></li></ul>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#focus">Focus</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
   <header class="hero">
-    <div>
+    <div class="hero-content">
       <h1>Daniel Sierra</h1>
       <h2>Global Program Director – Revenue Operations</h2>
     </div>
   </header>
 
-  <section class="section about container">
-    <div class="grid-two">
-      <div>
-        <img src="https://source.unsplash.com/800x600/?workspace,professional" alt="Professional Workspace" />
-      </div>
+  <!-- About Section -->
+  <section id="about" class="section container">
+    <div class="about">
+      <img src="https://source.unsplash.com/800x600/?workspace,executive" alt="Daniel Sierra Workspace" />
       <div>
         <h2>About Me</h2>
         <p>
-          I’m a dynamic global leader with 15+ years of experience at the intersection of sales strategy, digital transformation, and enterprise technology. I've led CRM programs and revenue ops strategy across 178+ countries, managing global teams and aligning tech with business value.
+          Dynamic global leader with 15+ years of experience at the intersection of sales strategy, digital transformation, and enterprise technology. Proven track record of leading global CRM programs, optimizing revenue operations, and driving large-scale innovation across 178+ countries.
         </p>
         <p>
-          Currently driving CRM transformation at DHL Express, I specialize in aligning digital tools with revenue acceleration goals across global markets.
+          Currently leading a worldwide CRM transformation program at DHL Express, I work closely with global teams and C-suite stakeholders to ensure scalable adoption, strong governance, and measurable commercial impact.
         </p>
       </div>
     </div>
   </section>
 
-  <section class="section portfolio container">
-    <h2>Focus Areas</h2>
-    <div class="grid">
+  <!-- Quote / Mission -->
+  <blockquote>
+    “True transformation happens when technology aligns with people and process.” – Daniel Sierra
+  </blockquote>
+
+  <!-- Focus Areas Section -->
+  <section id="focus" class="section portfolio container">
+    <h2>Core Focus Areas</h2>
+    <div class="portfolio-grid">
       <article>
         <h3>CRM Transformation</h3>
-        <p>Delivering scalable CRM ecosystems (Microsoft Dynamics 365) across global sales organizations.</p>
+        <p>Delivering Microsoft Dynamics 365-based ecosystems for 7,500+ users globally with measurable ROI and user adoption.</p>
       </article>
       <article>
         <h3>Revenue Operations</h3>
-        <p>Leading data-driven strategies to optimize sales enablement, forecasting, and productivity.</p>
+        <p>Strategically improving sales enablement, pipeline accuracy, and onboarding across 2,000+ sales reps in Europe and the Americas.</p>
       </article>
       <article>
-        <h3>Executive Strategy</h3>
-        <p>Aligning tech roadmaps with business goals through C-level stakeholder engagement.</p>
+        <h3>Global Change Leadership</h3>
+        <p>Driving adoption and alignment through change programs, training frameworks, and executive engagement in 178+ markets.</p>
       </article>
     </div>
   </section>
 
-  <section class="section container" id="contact">
-    <h2>Get In Touch</h2>
+  <!-- Optional Portfolio or Testimonials Section -->
+  <section class="section container">
+    <h2>Key Projects or Case Studies</h2>
+    <p><!-- TODO: Add portfolio links, screenshots or executive highlights here --></p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact container">
+    <h2>Let's Connect</h2>
     <form action="https://formspree.io/f/mnqkgepl" method="POST" class="grid">
       <input type="text" name="name" placeholder="Your name" required />
       <input type="email" name="email" placeholder="Your email" required />
-      <button type="submit">Send</button>
+      <button type="submit">Send Message</button>
     </form>
   </section>
 
+  <!-- Footer -->
   <footer>
     <small>
       <a href="https://linkedin.com/in/d-sierra" target="_blank">LinkedIn</a> • 
-      <a href="#">Resume</a>
+      <a href="#"><!-- TODO: Link to resume or CV PDF --></a>
     </small>
   </footer>
 
