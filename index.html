@@ -1,70 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Daniel Sierra – Personal Brand</title>
-  <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daniel Sierra – Global Revenue Ops</title>
+  <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .hero {
+      background: url('https://source.unsplash.com/1600x900/?business,technology') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.2em;
+    }
+    .hero h2 {
+      font-weight: normal;
+      font-size: 1.5rem;
+    }
+    .section {
+      padding: 4rem 1rem;
+    }
+    .about img {
+      max-width: 100%;
+      border-radius: 12px;
+    }
+    .grid-two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .portfolio .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #f1f1f1;
+    }
+  </style>
 </head>
 <body>
 
-  <nav class="container-fluid">
-    <ul>
-      <li><strong>Daniel Sierra</strong></li>
-    </ul>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#" role="button">Resume</a></li>
-    </ul>
-  </nav>
-
-  <main class="container">
-    <div class="grid">
-      <section>
-        <hgroup>
-          <h2>Global Program Director – Revenue Operations</h2>
-          <h3>CRM Transformation | Digital Enablement | Global Leadership</h3>
-        </hgroup>
-        <p>
-          Dynamic global leader with 15+ years of experience at the intersection of sales strategy, digital transformation, and enterprise technology. Proven track record of leading CRM programs and optimizing revenue operations across 178+ countries. Seeking strategic-level roles in Revenue Operations or Digital Enablement.
-        </p>
-        <figure>
-          <img src="https://source.unsplash.com/800x600/?workspace,professional" alt="Professional Workspace" />
-          <figcaption><a href="https://unsplash.com/s/photos/workspace" target="_blank">Image via Unsplash</a></figcaption>
-        </figure>
-
-        <h3>Strategic Leadership</h3>
-        <p>
-          Led global CRM transformations impacting 7,500+ users. Collaborated with VPs and C-suite executives to align digital roadmaps with commercial strategies. Proven success driving adoption and process consistency across diverse global teams.
-        </p>
-
-        <h3>Digital Enablement</h3>
-        <p>
-          Designed data-driven ecosystems and training frameworks that scaled globally. Implemented analytics programs that drove productivity and ROI from CRM platforms. Deep experience with Microsoft Dynamics 365, KPI strategy, and change management.
-        </p>
-      </section>
+  <header class="hero">
+    <div>
+      <h1>Daniel Sierra</h1>
+      <h2>Global Program Director – Revenue Operations</h2>
     </div>
-  </main>
+  </header>
 
-  <section aria-label="Subscribe example" id="contact">
-    <div class="container">
+  <section class="section about container">
+    <div class="grid-two">
+      <div>
+        <img src="https://source.unsplash.com/800x600/?workspace,professional" alt="Professional Workspace" />
+      </div>
+      <div>
+        <h2>About Me</h2>
+        <p>
+          I’m a dynamic global leader with 15+ years of experience at the intersection of sales strategy, digital transformation, and enterprise technology. I've led CRM programs and revenue ops strategy across 178+ countries, managing global teams and aligning tech with business value.
+        </p>
+        <p>
+          Currently driving CRM transformation at DHL Express, I specialize in aligning digital tools with revenue acceleration goals across global markets.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section portfolio container">
+    <h2>Focus Areas</h2>
+    <div class="grid">
       <article>
-        <hgroup>
-          <h2>Stay Connected</h2>
-          <h3>Get in touch or subscribe for updates</h3>
-        </hgroup>
-        <form class="grid">
-          <input type="text" id="firstname" name="firstname" placeholder="Your name" aria-label="Name" required />
-          <input type="email" id="email" name="email" placeholder="Your email" aria-label="Email" required />
-          <button type="submit" onclick="event.preventDefault()">Subscribe</button>
-        </form>
+        <h3>CRM Transformation</h3>
+        <p>Delivering scalable CRM ecosystems (Microsoft Dynamics 365) across global sales organizations.</p>
+      </article>
+      <article>
+        <h3>Revenue Operations</h3>
+        <p>Leading data-driven strategies to optimize sales enablement, forecasting, and productivity.</p>
+      </article>
+      <article>
+        <h3>Executive Strategy</h3>
+        <p>Aligning tech roadmaps with business goals through C-level stakeholder engagement.</p>
       </article>
     </div>
   </section>
 
-  <footer class="container">
-    <small><a href="https://linkedin.com/in/d-sierra" target="_blank">LinkedIn</a> • <a href="#">Resume</a></small>
+  <section class="section container" id="contact">
+    <h2>Get In Touch</h2>
+    <form action="https://formspree.io/f/mnqkgepl" method="POST" class="grid">
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="email" name="email" placeholder="Your email" required />
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <small>
+      <a href="https://linkedin.com/in/d-sierra" target="_blank">LinkedIn</a> • 
+      <a href="#">Resume</a>
+    </small>
   </footer>
 
 </body>
